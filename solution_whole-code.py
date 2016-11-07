@@ -8,7 +8,6 @@ def m_rse(y_pred, y_true):
     return np.mean((y_pred / y_true -1) ** 2)
 
 ### STEP 1 ###
-
 # reading the data and showing the summary
 dataset = pd.read_csv('./data.csv', header=None)
 dataset.describe()
@@ -16,6 +15,7 @@ dataset.describe()
 # showing basic statistics for n=24, 72, 168
 for i in [24,72,168]:
 	print "For %d-th hour: mean = %f, std = %f, median = %d" % (i, dataset[i].mean(), dataset[i].std(), dataset[i].median())
+
 ### STEP 2 ###
 # plotting the distribution of v(168)
 dataset[168].hist(bins = 40)
@@ -47,7 +47,6 @@ plt.ylabel('Correlation value')
 plt.title('Dependency between n and correlation')
 
 ### STEP 6 ###
-
 # applying log-tranform
 range_for_log_transform = range(1, dataset.shape[1])
 dataset[range_for_log_transform] = dataset[range_for_log_transform].apply(lambda x: np.log(x+1))
