@@ -15,10 +15,7 @@ dataset.describe()
 
 # showing basic statistics for n=24, 72, 168
 for i in [24,72,168]:
-	print "For %d-th hour: mean = %f, std = %f, median = %d" % (i,
-																dataset[i].mean(),
-																dataset[i].std(),
-															 	dataset[i].median())
+	print "For %d-th hour: mean = %f, std = %f, median = %d" % (i, dataset[i].mean(), dataset[i].std(), dataset[i].median())
 ### STEP 2 ###
 # plotting the distribution of v(168)
 dataset[168].hist(bins = 40)
